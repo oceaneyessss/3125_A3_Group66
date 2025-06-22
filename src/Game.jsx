@@ -1,4 +1,3 @@
-// src/Game.jsx
 import React, { useState, useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import bg from './assets/background.png'
@@ -10,13 +9,9 @@ export default function Game() {
     medium: { length: 6, displayMs: 2000, rounds: 7 },
     hard:   { length: 8, displayMs: 1000, rounds: 10 },
   }
-  const CHARSET =
-    'ABCDEFGHIJKLMNOPQRSTUVWXYZ' +
-    'abcdefghijklmnopqrstuvwxyz' +
-    '0123456789' +
-    '!@#$%^&*'
+  const CHARSET = '0123456789'
 
-  // ——— Local state ———
+
   const [selectedLevel, setSelectedLevel] = useState(null)
   const [round, setRound] = useState(1)
   const [seq, setSeq] = useState('')
@@ -26,10 +21,10 @@ export default function Game() {
   const [finished, setFinished] = useState(false)
   const [countdown, setCountdown] = useState(0)
 
-  // Grab the config for the chosen level
+
   const cfg = selectedLevel ? levelsConfig[selectedLevel] : null
 
-  // Generate a random string with given length for player to memory
+
   function genString(len) {
     let s = ''
     for (let i = 0; i < len; i++) {
@@ -38,7 +33,7 @@ export default function Game() {
     return s
   }
 
-  // On each round (and level change), show → hide the sequence
+
   useEffect(() => {
     if (!selectedLevel) return
     if (round > cfg.rounds) {
@@ -72,7 +67,7 @@ export default function Game() {
     }
   }, [round, selectedLevel])
 
-  // When user submits their guess
+
   function handleSubmit(e) {
     e.preventDefault()
     if (guess === seq) {
@@ -82,7 +77,7 @@ export default function Game() {
   }
 
 
-  // Reset everything back to the level‐select screen
+
   function resetGame() {
     setSelectedLevel(null)
     setRound(1)

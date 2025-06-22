@@ -10,10 +10,10 @@ export default function Home() {
   const navigate = useNavigate()
 
   return (
-    // Full‐screen flex container centering everything
+
     <div className="d-flex vh-100 align-items-center justify-content-center flex-column bg-dark">
       
-      {/* The 500×500 game box with background */}
+
       <div
         className="
           d-flex flex-column align-items-center justify-content-center
@@ -30,7 +30,7 @@ export default function Home() {
       >
         <h1 className="text-white fw-bold mb-4">Number Recall Game</h1>
 
-        {/* Buttons stacked vertically, centered */}
+
         <div className="d-flex flex-column align-items-center w-100 px-4">
           <button
             className="btn btn-outline-light btn-lg w-35 mb-3"
@@ -75,7 +75,6 @@ export default function Home() {
         )}
       </div>
 
-      {/* Footer */}
       <footer className="bg-light text-dark py-3 mt-4 mx-auto"
               style={{ width: 800 }}>
         <div className="container text-center">
